@@ -35,6 +35,17 @@
 | **PDF Splitter** | `/pdf-splitter` | ✅ Live | Browser `pdf-lib` + `JSZip` |
 | **Video to GIF** | `/video-to-gif` | ✅ Live | Browser Canvas + `gifenc` |
 | **Pinterest Downloader** | `/pinterest-downloader` | ✅ Live | Direct CDN Extraction |
+| **Background Remover** | `/background-remover` | ✅ Live | Browser Canvas Feathering |
+| **Image Upscaler (2x / 4x)** | `/image-upscaler` | ✅ Live | Bicubic & Unsharp Kernel |
+| **PDF to Word & Vice Versa** | `/pdf-to-word` | ✅ Live | `docx` + `pdf-lib` Engine |
+| **PDF Compressor** | `/pdf-compressor` | ✅ Live | Stream Optimization |
+| **PDF to JPG Converter** | `/pdf-to-jpg` | ✅ Live | `pdfjs-dist` + `JSZip` |
+| **Image to PDF Converter** | `/image-to-pdf` | ✅ Live | In-Browser `pdf-lib` |
+| **PDF Text & Signature Editor** | `/pdf-text-editor` | ✅ Live | `pdfjs-dist` + `pdf-lib` |
+| **Audio Trimmer & Cutter** | `/audio-trimmer` | ✅ Live | Web Audio API / WAV |
+| **Audio Format Converter** | `/audio-converter` | ✅ Live | Web Audio Resampling |
+| **Word & Character Counter** | `/word-counter` | ✅ Live | In-Memory Text Analyzer |
+| **URL Shortener & QR Maker** | `/url-shortener` | ✅ Live | Local Storage + QR Engine |
 
 ---
 

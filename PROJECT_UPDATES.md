@@ -133,6 +133,17 @@ QuickKit/
 8. **PDF Splitter (`/pdf-splitter`):** Extract specific page ranges (e.g. `1-3, 5`) into a single PDF or extract every page separately and bundle into a clean `.zip` using `pdf-lib` + `JSZip` (100% in-browser).
 9. **Video to GIF (`/video-to-gif`):** Upload MP4, WebM, or MOV video clips, adjust start offset, clip duration (1-8s), frame rate (5-15 FPS), resolution (320px-640px), and render animated GIFs in the browser with live frame-by-frame progress using `gifenc`.
 10. **Pinterest Downloader (`/pinterest-downloader`):** Paste any public Pinterest pin link or shortlink (`pin.it`). Resolves the highest resolution original image or direct video asset via server-side redirect resolver with instant download and direct CDN link options.
+11. **Background Remover (`/background-remover`):** Isolate subjects and generate transparent PNG cutouts using client-side canvas color-distance analysis, edge feathering, and custom background color replacement.
+12. **Image Upscaler (`/image-upscaler`):** 2x and 4x super-resolution enlargement with adaptive bicubic interpolation, 3x3 unsharp masking convolution kernel, and edge contrast sharpening.
+13. **PDF to Word & Vice Versa (`/pdf-to-word`):** Dual mode document converter. Extracts text streams and headings from PDF to editable Microsoft Word (`.docx`) using the `docx` library, or generates PDFs from Word documents.
+14. **PDF Compressor (`/pdf-compressor`):** Reduces PDF file size by stripping unneeded creator metadata, rebuilding object dictionaries, and compacting data streams.
+15. **PDF to JPG Converter (`/pdf-to-jpg`):** High-resolution (150-300 DPI) PDF page rasterization into JPG or PNG images with single-page and bulk ZIP archive downloads.
+16. **Image to PDF Converter (`/image-to-pdf`):** Batch image to PDF builder with custom page orientations (Auto, Portrait, Landscape), margins, and A4/Letter sizing.
+17. **PDF Text & Annotation Editor (`/pdf-text-editor`):** Interactive page-by-page PDF editor. Click anywhere on a page to insert custom text, stamps, dates, or signatures using `pdf-lib`.
+18. **Audio Trimmer & Cutter (`/audio-trimmer`):** 100% in-browser audio slicing using standard Web Audio APIs (`AudioContext`, `decodeAudioData`), audio preview playback, and lossless WAV export.
+19. **Audio Format Converter (`/audio-converter`):** Converts audio between MP3, WAV, and OGG formats with sample rate resampling (44.1 kHz, 48 kHz, 22.05 kHz).
+20. **Word & Character Counter (`/word-counter`):** Complete writing workstation calculating words, characters, sentences, paragraphs, reading speed, speaking duration, and case transformations.
+21. **URL Shortener & QR Maker (`/url-shortener`):** Generates short links, matching high-res QR codes, and tracks created links in local storage with dynamic redirect handler `/s/[code]`.
 
 ### Phase 6 — Quality & Production Build
 - `sitemap.ts` and `robots.ts` configured for search engine indexing.
