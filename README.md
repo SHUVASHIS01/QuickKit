@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# QuickKit
 
-## Getting Started
+> **Everything you need. Nothing you don't.**  
+> A free, global, minimal online tools platform.
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-blue?style=flat&logo=react)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
+[![DaisyUI](https://img.shields.io/badge/DaisyUI-v5-570DF8?style=flat&logo=daisyui)](https://daisyui.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
+---
+
+## ✨ Features
+
+- **Privacy-First Architecture:** Files and sensitive data remain strictly in your browser's local memory. No remote uploads or cloud tracking.
+- **100% Free & Unlimited:** No credit card, no subscription, and no mandatory registration.
+- **Minimal, Distraction-Free UI:** Clean white surfaces, subtle borders, Inter typography, and zero intrusive ads.
+- **Blazing Fast Performance:** Powered by Next.js App Router, Turbopack, HTML5 Canvas, and modern Web APIs.
+- **Central Tool Registry:** Strongly-typed registry generating homepage listings, search results, and navigation links.
+
+---
+
+## 🛠️ Included Tools
+
+| Tool | Route | Status | Processing |
+| :--- | :--- | :---: | :---: |
+| **QR Code Generator** | `/qr-generator` | ✅ Live | Browser / Canvas |
+| **JSON Formatter & Validator** | `/json-formatter` | ✅ Live | In-Memory |
+| **Base64 Converter** | `/base64-converter` | ✅ Live | In-Memory (Text & Files) |
+| **Image Compressor** | `/image-compressor` | ✅ Live | Browser Canvas |
+| **Image Format Converter** | `/image-converter` | ✅ Live | Browser Canvas |
+| **Image Resizer** | `/image-resizer` | ✅ Live | Browser Canvas |
+| **PDF Merger** | `/pdf-merger` | ✅ Live | Browser `pdf-lib` |
+| **PDF Splitter** | `/pdf-splitter` | ⏳ Coming Soon | Client-side Planned |
+| **Video to GIF** | `/video-to-gif` | ⏳ Coming Soon | WebAssembly / Workers |
+| **Pinterest Downloader** | `/pinterest-downloader` | ⏳ Coming Soon | Planned |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js `v18.18+` or `v20+` (Tested on `v24`)
+- npm `v9+`
+
+### Installation
 ```bash
+# Clone the repository
+git clone https://github.com/SHUVASHIS01/QuickKit.git
+cd QuickKit
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Available Scripts
+- `npm run dev`: Starts the Next.js development server with Turbopack.
+- `npm run build`: Generates the static production build.
+- `npm run start`: Runs the built production application.
+- `npm run lint`: Runs ESLint checks.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📖 Detailed Documentation
+For an architectural breakdown and phase-by-phase implementation log, please refer to [`PROJECT_UPDATES.md`](./PROJECT_UPDATES.md).
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License
+Open source and released under the [MIT License](LICENSE).
