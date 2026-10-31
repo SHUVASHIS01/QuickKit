@@ -17,6 +17,58 @@ export function PinterestDownloader() {
   const [result, setResult] = useState<ExtractedMedia | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const getCleanFilename = (item: ExtractedMedia) => {
+    const ext = item.mediaType === "video" ? "mp4" : "jpg";
+    const cleanTitle =
+      item.title
+        .replace(/[^a-zA-Z0-9_\-\s]/g, "")
+        .trim()
+        .replace(/\s+/g, "_")
+        .substring(0, 32) || "pinterest_media";
+    return `${cleanTitle}.${ext}`;
+  };
+
+  const handleDownload = async () => {
+    if (!result) return;
+    setIsDownloading(true);
+
+    try {
+      const filename = getCleanFilename(result);
+      const downloadEndpoint = `/api/pinterest/download?url=${encodeURIComponent(
+        result.mediaUrl
+      )}&filename=${encodeURIComponent(filename)}`;
+
+      const res = await fetch(downloadEndpoint);
+      if (!res.ok) throw new Error("Download failed");
+
+      const blob = await res.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = blobUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(blobUrl);
+    } catch {
+      // Direct anchor click fallback
+      const filename = getCleanFilename(result);
+      const fallbackUrl = `/api/pinterest/download?url=${encodeURIComponent(
+        result.mediaUrl
+      )}&filename=${encodeURIComponent(filename)}`;
+      const link = document.createElement("a");
+      link.href = fallbackUrl;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } finally {
+      setIsDownloading(false);
+    }
+  };
 
   const handleExtract = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
@@ -201,15 +253,22 @@ export function PinterestDownloader() {
                 </p>
 
                 <div className="pt-2 space-y-2.5">
-                  <a
-                    href={result.mediaUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    download
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-xs hover:bg-blue-700 transition-colors"
+                  <button
+                    type="button"
+                    onClick={handleDownload}
+                    disabled={isDownloading}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-xs hover:bg-blue-700 disabled:opacity-50 transition-colors cursor-pointer"
                   >
-                    <DownloadCloud className="h-4 w-4" /> Download {result.mediaType === "video" ? "Video (MP4)" : "Original Image"}
-                  </a>
+                    {isDownloading ? (
+                      <>
+                        <Loader2 className="h-4 w-4 animate-spin" /> Saving to Downloads...
+                      </>
+                    ) : (
+                      <>
+                        <DownloadCloud className="h-4 w-4" /> Download {result.mediaType === "video" ? "Video (MP4)" : "Original Image"}
+                      </>
+                    )}
+                  </button>
 
                   <a
                     href={result.mediaUrl}
