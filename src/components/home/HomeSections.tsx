@@ -21,10 +21,30 @@ export function HomeSections({
   allTools,
 }: HomeSectionsProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
+
+  const handleCategoryClick = (catId: string) => {
+    if (activeCategory === catId) {
+      setActiveCategory(null);
+    } else {
+      setActiveCategory(catId);
+      setTimeout(() => {
+        const el = document.getElementById("category-tools-view");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      }, 80);
+    }
+  };
+
+  const activeCategoryInfo = categories.find((c) => c.id === activeCategory);
+  const activeCategoryTools = activeCategory
+    ? allTools.filter((t) => t.category === activeCategory)
+    : [];
 
   return (
     <div className="space-y-20 sm:space-y-24 py-16">
@@ -68,10 +88,24 @@ export function HomeSections({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {categories.map((cat) => {
             const count = allTools.filter((t) => t.category === cat.id).length;
+            const isSelected = activeCategory === cat.id;
+
             return (
               <div
                 key={cat.id}
-                className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-2xs hover:border-blue-300 hover:shadow-md transition-all"
+                onClick={() => handleCategoryClick(cat.id)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    handleCategoryClick(cat.id);
+                  }
+                }}
+                className={`group rounded-2xl border p-6 shadow-2xs hover:border-blue-400 hover:shadow-md transition-all cursor-pointer text-left ${
+                  isSelected
+                    ? "border-blue-600 bg-blue-50/30 ring-2 ring-blue-500/20 shadow-md"
+                    : "border-slate-200 bg-white"
+                }`}
               >
                 <div className="flex items-center justify-between mb-4">
                   <div
@@ -79,7 +113,13 @@ export function HomeSections({
                   >
                     <DynamicIcon name={cat.icon} className="h-6 w-6" />
                   </div>
-                  <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-600">
+                  <span
+                    className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+                      isSelected
+                        ? "bg-blue-600 text-white"
+                        : "bg-slate-100 text-slate-600"
+                    }`}
+                  >
                     {count} {count === 1 ? "tool" : "tools"}
                   </span>
                 </div>
@@ -92,13 +132,58 @@ export function HomeSections({
                 </p>
 
                 <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600 group-hover:translate-x-1 transition-transform">
-                  <span>Explore tools</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
+                  <span>{isSelected ? "Viewing category tools ↓" : "Click to view tools"}</span>
+                  <ArrowRight
+                    className={`h-3.5 w-3.5 transition-transform ${
+                      isSelected ? "rotate-90 text-blue-600" : ""
+                    }`}
+                  />
                 </div>
               </div>
             );
           })}
         </div>
+
+        {/* Dynamic Category Tools Drawer */}
+        {activeCategoryInfo && (
+          <div
+            id="category-tools-view"
+            className="mt-10 rounded-2xl border border-blue-200 bg-slate-50/70 p-6 sm:p-8 space-y-6 scroll-mt-24 transition-all duration-200"
+          >
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
+              <div className="flex items-center gap-3.5">
+                <div
+                  className={`flex h-11 w-11 items-center justify-center rounded-xl border ${activeCategoryInfo.accentColor}`}
+                >
+                  <DynamicIcon name={activeCategoryInfo.icon} className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900">
+                    {activeCategoryInfo.name}
+                  </h3>
+                  <p className="text-xs text-slate-500">
+                    Showing all {activeCategoryTools.length}{" "}
+                    {activeCategoryTools.length === 1 ? "tool" : "tools"} in this category
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setActiveCategory(null)}
+                className="self-start sm:self-auto rounded-xl border border-slate-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors shadow-2xs cursor-pointer"
+              >
+                Close Category View ✕
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {activeCategoryTools.map((tool) => (
+                <ToolCard key={tool.id} tool={tool} />
+              ))}
+            </div>
+          </div>
+        )}
       </section>
 
       {/* 3. WHY QUICKKIT (VALUE PROPOSITIONS) */}
