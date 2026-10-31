@@ -32,9 +32,9 @@
 | **Image Format Converter** | `/image-converter` | ✅ Live | Browser Canvas |
 | **Image Resizer** | `/image-resizer` | ✅ Live | Browser Canvas |
 | **PDF Merger** | `/pdf-merger` | ✅ Live | Browser `pdf-lib` |
-| **PDF Splitter** | `/pdf-splitter` | ⏳ Coming Soon | Client-side Planned |
-| **Video to GIF** | `/video-to-gif` | ⏳ Coming Soon | WebAssembly / Workers |
-| **Pinterest Downloader** | `/pinterest-downloader` | ⏳ Coming Soon | Planned |
+| **PDF Splitter** | `/pdf-splitter` | ✅ Live | Browser `pdf-lib` + `JSZip` |
+| **Video to GIF** | `/video-to-gif` | ✅ Live | Browser Canvas + `gifenc` |
+| **Pinterest Downloader** | `/pinterest-downloader` | ✅ Live | Direct CDN Extraction |
 
 ---
 

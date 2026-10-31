@@ -2,13 +2,13 @@ import React from "react";
 import { Metadata } from "next";
 import { getToolBySlug } from "@/config/tools";
 import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
-import { ComingSoonTool } from "@/components/tool/ComingSoonTool";
+import { PdfSplitter } from "@/features/pdf-splitter/PdfSplitter";
 import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: "PDF Splitter — Extract Pages from PDF",
+  title: "PDF Splitter — Extract Pages or Split All to ZIP",
   description:
-    "Extract specific pages or separate single PDF documents cleanly in your browser. Coming soon to QuickKit.",
+    "Extract specific page ranges or separate all pages from any PDF document cleanly in your browser. Fast, 100% private, and free.",
 };
 
 export default function PdfSplitterPage() {
@@ -17,9 +17,8 @@ export default function PdfSplitterPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <ToolPageHeader tool={tool} badge="Coming Soon" />
-      <ComingSoonTool tool={tool} />
+      <ToolPageHeader tool={tool} badge="Instant Client Split" />
+      <PdfSplitter />
     </div>
   );
 }
-

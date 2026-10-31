@@ -130,9 +130,9 @@ QuickKit/
 5. **Image Converter (`/image-converter`):** Convert between WebP, PNG, and JPEG with quality adjustments and background fill handling.
 6. **Image Resizer (`/image-resizer`):** Pixel width/height resizing, aspect ratio locking, social media presets (1080p, 720p, 1:1 square, avatar).
 7. **PDF Merger (`/pdf-merger`):** Merge multiple PDF documents locally using `pdf-lib`, drag/drop, item reordering (move up/down), total size calculator, and client-side merge.
-8. **PDF Splitter (`/pdf-splitter`):** Honest coming-soon view with feature explanation and notification form.
-9. **Video to GIF (`/video-to-gif`):** Honest coming-soon view.
-10. **Pinterest Downloader (`/pinterest-downloader`):** Honest coming-soon view.
+8. **PDF Splitter (`/pdf-splitter`):** Extract specific page ranges (e.g. `1-3, 5`) into a single PDF or extract every page separately and bundle into a clean `.zip` using `pdf-lib` + `JSZip` (100% in-browser).
+9. **Video to GIF (`/video-to-gif`):** Upload MP4, WebM, or MOV video clips, adjust start offset, clip duration (1-8s), frame rate (5-15 FPS), resolution (320px-640px), and render animated GIFs in the browser with live frame-by-frame progress using `gifenc`.
+10. **Pinterest Downloader (`/pinterest-downloader`):** Paste any public Pinterest pin link or shortlink (`pin.it`). Resolves the highest resolution original image or direct video asset via server-side redirect resolver with instant download and direct CDN link options.
 
 ### Phase 6 — Quality & Production Build
 - `sitemap.ts` and `robots.ts` configured for search engine indexing.
@@ -167,3 +167,4 @@ npm run start
 - [ ] Implement client-side video frame capture to GIF using Web Workers.
 - [ ] Add dark mode toggle switcher in Navbar using Tailwind/DaisyUI themes.
 - [ ] Add offline support via Service Worker / PWA capabilities.
+

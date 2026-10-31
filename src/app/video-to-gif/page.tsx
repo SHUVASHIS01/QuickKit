@@ -2,13 +2,13 @@ import React from "react";
 import { Metadata } from "next";
 import { getToolBySlug } from "@/config/tools";
 import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
-import { ComingSoonTool } from "@/components/tool/ComingSoonTool";
+import { VideoToGif } from "@/features/video-to-gif/VideoToGif";
 import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: "Video to GIF Converter — Short Clips to GIF",
+  title: "Video to GIF Converter — MP4 and WebM to GIF",
   description:
-    "Convert MP4 and WebM video clips into lightweight, loopable GIFs with custom frame rate and dimensions.",
+    "Convert MP4, WebM, and MOV video clips into lightweight, loopable GIFs with custom frame rates and dimensions directly in your browser.",
 };
 
 export default function VideoToGifPage() {
@@ -17,9 +17,8 @@ export default function VideoToGifPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <ToolPageHeader tool={tool} badge="Coming Soon" />
-      <ComingSoonTool tool={tool} />
+      <ToolPageHeader tool={tool} badge="Browser Rendered" />
+      <VideoToGif />
     </div>
   );
 }
-

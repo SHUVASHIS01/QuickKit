@@ -160,10 +160,10 @@ export const TOOLS: ToolItem[] = [
     description:
       "Select specific page ranges or extract each page as an independent PDF document with zero upload limits.",
     icon: "Scissors",
-    status: "coming-soon",
+    status: "available",
     popular: false,
-    recentlyAdded: false,
-    privacyNotice: "Secure client-side document processing.",
+    recentlyAdded: true,
+    privacyNotice: "Secure client-side document processing with zip bundle support.",
     tags: ["pdf", "split", "extract", "pages", "documents"],
   },
   {
@@ -175,10 +175,10 @@ export const TOOLS: ToolItem[] = [
     description:
       "Upload MP4, WebM, or MOV clips, select duration and frame rate, and create optimized animated GIFs for sharing.",
     icon: "Film",
-    status: "coming-soon",
-    popular: false,
+    status: "available",
+    popular: true,
     recentlyAdded: true,
-    privacyNotice: "Rendered client-side using WebAssembly & Canvas.",
+    privacyNotice: "Rendered client-side using Web Canvas and frame quantization.",
     tags: ["video", "gif", "animation", "mp4", "clip"],
   },
   {
@@ -190,8 +190,8 @@ export const TOOLS: ToolItem[] = [
     description:
       "Paste any public Pinterest pin link to extract the original high-resolution photo or video asset directly.",
     icon: "DownloadCloud",
-    status: "coming-soon",
-    popular: false,
+    status: "available",
+    popular: true,
     recentlyAdded: true,
     privacyNotice: "Direct link extraction without tracking or credential storage.",
     tags: ["pinterest", "downloader", "media", "pins", "images"],
