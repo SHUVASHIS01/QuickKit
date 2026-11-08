@@ -197,21 +197,6 @@ export const TOOLS: ToolItem[] = [
     tags: ["pinterest", "downloader", "media", "pins", "images"],
   },
   {
-    id: "background-remover",
-    name: "Background Remover",
-    slug: "background-remover",
-    category: "image",
-    shortDescription: "Erase image backgrounds instantly with transparent PNG export.",
-    description:
-      "Automatically detect subjects and isolate transparent backgrounds for portraits, product photos, and graphics right in your browser.",
-    icon: "Eraser",
-    status: "available",
-    popular: true,
-    recentlyAdded: true,
-    privacyNotice: "100% in-browser Canvas processing. Photos never leave your machine.",
-    tags: ["background", "remove", "transparent", "cutout", "png", "photo", "image"],
-  },
-  {
     id: "image-upscaler",
     name: "Image Upscaler",
     slug: "image-upscaler",

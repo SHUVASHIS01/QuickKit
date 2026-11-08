@@ -133,7 +133,6 @@ QuickKit/
 8. **PDF Splitter (`/pdf-splitter`):** Extract specific page ranges (e.g. `1-3, 5`) into a single PDF or extract every page separately and bundle into a clean `.zip` using `pdf-lib` + `JSZip` (100% in-browser).
 9. **Video to GIF (`/video-to-gif`):** Upload MP4, WebM, or MOV video clips, adjust start offset, clip duration (1-8s), frame rate (5-15 FPS), resolution (320px-640px), and render animated GIFs in the browser with live frame-by-frame progress using `gifenc`.
 10. **Pinterest Downloader (`/pinterest-downloader`):** Paste any public Pinterest pin link or shortlink (`pin.it`). Resolves the highest resolution original image or direct video asset via server-side redirect resolver with instant download and direct CDN link options.
-11. **Background Remover (`/background-remover`):** Isolate subjects and generate transparent PNG cutouts using client-side canvas color-distance analysis, edge feathering, and custom background color replacement.
 12. **Image Upscaler (`/image-upscaler`):** 2x and 4x super-resolution enlargement with adaptive bicubic interpolation, 3x3 unsharp masking convolution kernel, and edge contrast sharpening.
 13. **PDF to Word & Vice Versa (`/pdf-to-word`):** Dual mode document converter. Extracts text streams and headings from PDF to editable Microsoft Word (`.docx`) using the `docx` library, or generates PDFs from Word documents.
 14. **PDF Compressor (`/pdf-compressor`):** Reduces PDF file size by stripping unneeded creator metadata, rebuilding object dictionaries, and compacting data streams.

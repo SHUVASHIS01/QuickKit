@@ -35,7 +35,6 @@
 | **PDF Splitter** | `/pdf-splitter` | ✅ Live | Browser `pdf-lib` + `JSZip` |
 | **Video to GIF** | `/video-to-gif` | ✅ Live | Browser Canvas + `gifenc` |
 | **Pinterest Downloader** | `/pinterest-downloader` | ✅ Live | Direct CDN Extraction |
-| **Background Remover** | `/background-remover` | ✅ Live | Browser Canvas Feathering |
 | **Image Upscaler (2x / 4x)** | `/image-upscaler` | ✅ Live | Bicubic & Unsharp Kernel |
 | **PDF to Word & Vice Versa** | `/pdf-to-word` | ✅ Live | `docx` + `pdf-lib` Engine |
 | **PDF Compressor** | `/pdf-compressor` | ✅ Live | Stream Optimization |
