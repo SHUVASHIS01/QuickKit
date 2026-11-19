@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -127,25 +128,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <head>
-        {/* Google AdSense */}
-        <script
+      <body className="min-h-full flex flex-col bg-white text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900">
+        {/* Google AdSense via Next.js Script (afterInteractive prevents hydration mismatch) */}
+        <Script
+          id="google-adsense"
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9815633995648507"
           crossOrigin="anonymous"
+          strategy="afterInteractive"
         />
-        {/* Google Search Console Verification */}
-        <meta
-          name="google-site-verification"
-          content="iM-tmJaRIj4csqzOwepommIYhc6EpNsIcAJafWsKOPo"
-        />
+
         {/* Structured Data Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body className="min-h-full flex flex-col bg-white text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900">
+
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
