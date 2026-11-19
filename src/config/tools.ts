@@ -331,6 +331,21 @@ export const TOOLS: ToolItem[] = [
     privacyNotice: "Instant creation with local storage history.",
     tags: ["url shortener", "short link", "tinyurl", "bitly", "qr code", "utility"],
   },
+  {
+    id: "currency-converter",
+    name: "Currency Converter",
+    slug: "currency-converter",
+    category: "converter",
+    shortDescription: "Convert 160+ world currencies with live and offline rates.",
+    description:
+      "Instant currency conversion across 160+ world currencies with real-time exchange rate updates, multi-currency overview, and full offline benchmark rates.",
+    icon: "Coins",
+    status: "available",
+    popular: true,
+    recentlyAdded: true,
+    privacyNotice: "Direct open rate sync. No financial or tracking data stored.",
+    tags: ["currency", "money", "exchange rate", "dollar", "euro", "taka", "rupee", "converter"],
+  },
 ];
 
 export function getToolBySlug(slug: string): ToolItem | undefined {

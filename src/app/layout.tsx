@@ -81,6 +81,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "iM-tmJaRIj4csqzOwepommIYhc6EpNsIcAJafWsKOPo",
+  },
 };
 
 export const viewport: Viewport = {
@@ -125,6 +128,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <head>
+        <meta
+          name="google-site-verification"
+          content="iM-tmJaRIj4csqzOwepommIYhc6EpNsIcAJafWsKOPo"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

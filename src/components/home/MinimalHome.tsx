@@ -91,8 +91,8 @@ export function MinimalHome({ allTools, categories }: MinimalHomeProps) {
             )}
           </div>
 
-          {/* Filter Chips */}
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none shrink-0">
+          {/* Filter Chips - Native Horizontal Swipe on Mobile */}
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-1.5 md:pb-0 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0 shrink-0">
             <button
               onClick={() => setSelectedCategory("all")}
               className={`rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${

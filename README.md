@@ -47,6 +47,7 @@
 | **Audio Format Converter** | `/audio-converter` | ✅ Live | Web Audio Resampling |
 | **Word & Character Counter** | `/word-counter` | ✅ Live | In-Memory Text Analyzer |
 | **URL Shortener & QR Maker** | `/url-shortener` | ✅ Live | Local Storage + QR Engine |
+| **Currency Converter** | `/currency-converter` | ✅ Live | Live Rates + 160+ Currencies |
 
 ---
 
