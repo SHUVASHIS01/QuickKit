@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="qk-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#1E3A8A" flood-opacity="0.35" />
+    </filter>
+  </defs>
+  
+  <!-- Rounded Squircle Base -->
+  <rect x="32" y="32" width="448" height="448" rx="112" fill="url(#qk-grad)" filter="url(#shadow)" />
+  <rect x="34" y="34" width="444" height="444" rx="110" fill="none" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="4" />
+  
+  <!-- Primary Sparkle Emblem -->
+  <path d="M256 104 C256 180 278 202 354 202 C278 202 256 224 256 300 C256 224 234 202 158 202 C234 202 256 180 256 104 Z" fill="#FFFFFF" />
+  
+  <!-- Secondary Accent Sparkle -->
+  <path d="M352 276 C352 318 365 331 407 331 C365 331 352 344 352 386 C352 344 339 331 297 331 C339 331 352 318 352 276 Z" fill="#93C5FD" />
+  
+  <!-- Micro Accent -->
+  <circle cx="164" cy="326" r="16" fill="#BFDBFE" />
+</svg>

@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   tagline: "Everything you need. Nothing you don't.",
   description:
     "A free, fast, and minimal online tools platform. Process images, PDFs, developer utilities, and media securely right inside your browser without accounts or limits.",
-  url: "https://quickkit.vercel.app",
+  url: "https://quick-kit-chi.vercel.app",
   author: "QuickKit Team",
   github: "https://github.com/SHUVASHIS01/QuickKit.git",
   navLinks: [

@@ -19,18 +19,44 @@ export const metadata: Metadata = {
   description: SITE_CONFIG.description,
   keywords: [
     "free online tools",
+    "quickkit",
     "image compressor",
     "image converter",
+    "image resizer",
+    "image upscaler",
     "pdf merger",
+    "pdf splitter",
+    "pdf compressor",
+    "pdf to word",
+    "pdf to jpg",
+    "pdf text editor",
+    "audio trimmer",
+    "audio converter",
+    "video to gif",
     "qr code generator",
     "json formatter",
-    "base64 encoder",
-    "privacy tools",
-    "client-side tools",
+    "base64 converter",
+    "url shortener",
+    "word counter",
+    "pinterest downloader",
+    "privacy first tools",
+    "client-side browser tools",
   ],
   authors: [{ name: SITE_CONFIG.author }],
   creator: SITE_CONFIG.author,
   metadataBase: new URL(SITE_CONFIG.url),
+  alternates: {
+    canonical: "./",
+  },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-icon.svg", type: "image/svg+xml" },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -47,6 +73,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -56,6 +89,34 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_CONFIG.url}/#website`,
+      url: SITE_CONFIG.url,
+      name: SITE_CONFIG.name,
+      description: SITE_CONFIG.description,
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "WebApplication",
+      "@id": `${SITE_CONFIG.url}/#webapp`,
+      url: SITE_CONFIG.url,
+      name: SITE_CONFIG.name,
+      applicationCategory: "UtilityApplication",
+      operatingSystem: "All",
+      browserRequirements: "Requires JavaScript. Requires HTML5.",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -63,6 +124,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-white text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900">
         <Navbar />
         <main className="flex-1">{children}</main>

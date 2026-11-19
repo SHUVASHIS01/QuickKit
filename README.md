@@ -3,6 +3,9 @@
 > **Everything you need. Nothing you don't.**  
 > A free, global, minimal online tools platform.
 
+🌐 **Live Website:** [https://quick-kit-chi.vercel.app/](https://quick-kit-chi.vercel.app/)
+
+[![Live Deployment](https://img.shields.io/badge/Deploy-Vercel-black?style=flat&logo=vercel)](https://quick-kit-chi.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-blue?style=flat&logo=react)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
