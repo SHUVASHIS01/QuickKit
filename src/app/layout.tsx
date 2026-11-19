@@ -128,10 +128,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <head>
+        {/* Google AdSense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9815633995648507"
+          crossOrigin="anonymous"
+        />
+        {/* Google Search Console Verification */}
         <meta
           name="google-site-verification"
           content="iM-tmJaRIj4csqzOwepommIYhc6EpNsIcAJafWsKOPo"
         />
+        {/* Structured Data Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
