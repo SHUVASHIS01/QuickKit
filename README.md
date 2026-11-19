@@ -39,7 +39,6 @@
 | **PDF to Word & Vice Versa** | `/pdf-to-word` | ✅ Live | `docx` + `pdf-lib` Engine |
 | **PDF Compressor** | `/pdf-compressor` | ✅ Live | Stream Optimization |
 | **PDF to JPG Converter** | `/pdf-to-jpg` | ✅ Live | `pdfjs-dist` + `JSZip` |
-| **Image to PDF Converter** | `/image-to-pdf` | ✅ Live | In-Browser `pdf-lib` |
 | **PDF Text & Signature Editor** | `/pdf-text-editor` | ✅ Live | `pdfjs-dist` + `pdf-lib` |
 | **Audio Trimmer & Cutter** | `/audio-trimmer` | ✅ Live | Web Audio API / WAV |
 | **Audio Format Converter** | `/audio-converter` | ✅ Live | Web Audio Resampling |

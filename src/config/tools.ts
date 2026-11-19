@@ -212,21 +212,6 @@ export const TOOLS: ToolItem[] = [
     tags: ["upscale", "super-resolution", "enhance", "enlarge", "sharp", "image"],
   },
   {
-    id: "image-to-pdf",
-    name: "Image to PDF Converter",
-    slug: "image-to-pdf",
-    category: "pdf",
-    shortDescription: "Convert multiple JPG & PNG photos into a clean single PDF.",
-    description:
-      "Combine photos and scans into a single organized PDF document with custom page orientations, margins, and page order.",
-    icon: "FileSpreadsheet",
-    status: "available",
-    popular: true,
-    recentlyAdded: true,
-    privacyNotice: "Zero server uploads. Generated directly using browser pdf-lib.",
-    tags: ["image to pdf", "jpg to pdf", "png to pdf", "photos", "documents", "pdf"],
-  },
-  {
     id: "pdf-to-jpg",
     name: "PDF to JPG Converter",
     slug: "pdf-to-jpg",

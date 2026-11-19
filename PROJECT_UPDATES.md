@@ -137,7 +137,6 @@ QuickKit/
 13. **PDF to Word & Vice Versa (`/pdf-to-word`):** Dual mode document converter. Extracts text streams and headings from PDF to editable Microsoft Word (`.docx`) using the `docx` library, or generates PDFs from Word documents.
 14. **PDF Compressor (`/pdf-compressor`):** Reduces PDF file size by stripping unneeded creator metadata, rebuilding object dictionaries, and compacting data streams.
 15. **PDF to JPG Converter (`/pdf-to-jpg`):** High-resolution (150-300 DPI) PDF page rasterization into JPG or PNG images with single-page and bulk ZIP archive downloads.
-16. **Image to PDF Converter (`/image-to-pdf`):** Batch image to PDF builder with custom page orientations (Auto, Portrait, Landscape), margins, and A4/Letter sizing.
 17. **PDF Text & Annotation Editor (`/pdf-text-editor`):** Interactive page-by-page PDF editor. Click anywhere on a page to insert custom text, stamps, dates, or signatures using `pdf-lib`.
 18. **Audio Trimmer & Cutter (`/audio-trimmer`):** 100% in-browser audio slicing using standard Web Audio APIs (`AudioContext`, `decodeAudioData`), audio preview playback, and lossless WAV export.
 19. **Audio Format Converter (`/audio-converter`):** Converts audio between MP3, WAV, and OGG formats with sample rate resampling (44.1 kHz, 48 kHz, 22.05 kHz).
