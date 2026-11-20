@@ -71,7 +71,7 @@
 
   <!-- Big number stat -->
   <g transform="translate(100, 335)">
-    <text x="0" y="85" font-family="Arial Black, Arial, sans-serif" font-size="96" font-weight="900" fill="#ffffff" opacity="0.95">20+</text>
+    <text x="0" y="85" font-family="Arial Black, Arial, sans-serif" font-size="96" font-weight="900" fill="#ffffff" opacity="0.95">25+</text>
     <text x="0" y="118" font-family="Arial, sans-serif" font-size="22" fill="#93c5fd">Free Online Tools</text>
   </g>
 

@@ -136,6 +136,48 @@ const TOOL_SEO: Record<
       "Convert between 160+ world currencies with real-time exchange rates. Multi-currency overview, offline benchmark rates, and instant calculation — no account needed.",
     keywords: ["currency converter", "exchange rate", "usd to bdt", "live currency", "money converter"],
   },
+  "password-generator": {
+    title: "Password Generator — Strong, Random & Secure Passwords Free",
+    description:
+      "Generate cryptographically secure random passwords, memorable passphrases, or PINs. Customize length, numbers, and symbols. 100% private, client-side.",
+    keywords: ["password generator", "random password", "secure password", "strong password generator", "pin generator"],
+  },
+  "percentage-calculator": {
+    title: "Percentage Calculator — Fast Percent, Discount & Tax Calculation",
+    description:
+      "Free online percentage calculator. Calculate percentage of a number, percentage change, discounts, sales tax, and tips with instant live results.",
+    keywords: ["percentage calculator", "calculate percentage", "percent change calculator", "discount calculator", "tax calculator"],
+  },
+  "case-converter": {
+    title: "Case Converter — UPPERCASE, lowercase, Title Case & camelCase",
+    description:
+      "Convert text case between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, and kebab-case instantly in your browser.",
+    keywords: ["case converter", "text case converter", "uppercase to lowercase", "title case converter", "camelcase converter"],
+  },
+  "text-repeater": {
+    title: "Text Repeater — Repeat Words, Sentences & Messages 10,000x",
+    description:
+      "Repeat any text, message, or emoji up to 10,000 times with custom line breaks or separators. 1-click copy to clipboard and text file download.",
+    keywords: ["text repeater", "repeat text", "repeat text 100 times", "sorry repeater", "message repeater online"],
+  },
+  "image-color-picker": {
+    title: "Image Color Picker — Extract HEX, RGB, HSL & Palettes Online",
+    description:
+      "Pick colors from any image with an interactive magnifying loupe. Extract dominant color palettes and copy HEX, RGB, and HSL codes instantly.",
+    keywords: ["image color picker", "eyedropper online", "hex color from image", "image palette generator", "rgb color picker"],
+  },
+  "heic-to-jpg": {
+    title: "HEIC to JPG Converter — Convert Apple iPhone Photos Online Free",
+    description:
+      "Convert Apple HEIC and HEIF photos to high-quality JPG or PNG images directly in your browser. Batch conversion and ZIP download supported — no upload.",
+    keywords: ["heic to jpg", "heic to png", "convert heic to jpg", "iphone photo converter", "heif to jpg"],
+  },
+  "typing-speed-test": {
+    title: "Typing Speed Test — Test Your WPM & Accuracy Online Free",
+    description:
+      "Check your typing speed (WPM) and accuracy in 15, 30, or 60-second typing tests. Real-time feedback, detailed keystroke breakdown, and score summary.",
+    keywords: ["typing speed test", "typing test", "wpm test", "typing practice", "keyboard speed test"],
+  },
 };
 
 /**
