@@ -1,25 +1,23 @@
 import React from "react";
-import { Metadata } from "next";
-import { getToolBySlug } from "@/config/tools";
-import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
-import { JsonFormatter } from "@/features/json-formatter/JsonFormatter";
 import { notFound } from "next/navigation";
+import { getToolBySlug } from "@/config/tools";
+import { generateToolMetadata } from "@/lib/seo";
+import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
+import { ToolJsonLd } from "@/components/seo/ToolJsonLd";
+import { RelatedTools } from "@/components/tool/RelatedTools";
+import { JsonFormatter } from "@/features/json-formatter/JsonFormatter";
 
-export const metadata: Metadata = {
-  title: "JSON Formatter & Validator — Clean & Prettify",
-  description:
-    "Prettify, minify, inspect, and validate JSON payloads client-side with zero data leaving your device.",
-};
+const tool = getToolBySlug("json-formatter");
+export const metadata = tool ? generateToolMetadata(tool) : {};
 
 export default function JsonFormatterPage() {
-  const tool = getToolBySlug("json-formatter");
   if (!tool) notFound();
-
   return (
     <div className="flex flex-col min-h-screen">
-      <ToolPageHeader tool={tool} badge="100% Client-Side" />
+      <ToolJsonLd tool={tool} />
+      <ToolPageHeader tool={tool} badge="Instant Formatting" />
       <JsonFormatter />
+      <RelatedTools currentToolId={tool.id} category={tool.category} />
     </div>
   );
 }
-

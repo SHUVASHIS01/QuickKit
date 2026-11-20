@@ -1,24 +1,23 @@
 import React from "react";
-import { Metadata } from "next";
-import { getToolBySlug } from "@/config/tools";
-import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
-import { PdfSplitter } from "@/features/pdf-splitter/PdfSplitter";
 import { notFound } from "next/navigation";
+import { getToolBySlug } from "@/config/tools";
+import { generateToolMetadata } from "@/lib/seo";
+import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
+import { ToolJsonLd } from "@/components/seo/ToolJsonLd";
+import { RelatedTools } from "@/components/tool/RelatedTools";
+import { PdfSplitter } from "@/features/pdf-splitter/PdfSplitter";
 
-export const metadata: Metadata = {
-  title: "PDF Splitter — Extract Pages or Split All to ZIP",
-  description:
-    "Extract specific page ranges or separate all pages from any PDF document cleanly in your browser. Fast, 100% private, and free.",
-};
+const tool = getToolBySlug("pdf-splitter");
+export const metadata = tool ? generateToolMetadata(tool) : {};
 
 export default function PdfSplitterPage() {
-  const tool = getToolBySlug("pdf-splitter");
   if (!tool) notFound();
-
   return (
     <div className="flex flex-col min-h-screen">
-      <ToolPageHeader tool={tool} badge="Instant Client Split" />
+      <ToolJsonLd tool={tool} />
+      <ToolPageHeader tool={tool} badge="Page Range" />
       <PdfSplitter />
+      <RelatedTools currentToolId={tool.id} category={tool.category} />
     </div>
   );
 }

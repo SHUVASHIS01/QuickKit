@@ -1,25 +1,23 @@
 import React from "react";
-import { Metadata } from "next";
-import { getToolBySlug } from "@/config/tools";
-import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
-import { ImageConverter } from "@/features/image-converter/ImageConverter";
 import { notFound } from "next/navigation";
+import { getToolBySlug } from "@/config/tools";
+import { generateToolMetadata } from "@/lib/seo";
+import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
+import { ToolJsonLd } from "@/components/seo/ToolJsonLd";
+import { RelatedTools } from "@/components/tool/RelatedTools";
+import { ImageConverter } from "@/features/image-converter/ImageConverter";
 
-export const metadata: Metadata = {
-  title: "Image Format Converter — JPG, PNG, WEBP",
-  description:
-    "Convert images between JPG, PNG, and WebP instantly in your browser with adjustable compression quality.",
-};
+const tool = getToolBySlug("image-converter");
+export const metadata = tool ? generateToolMetadata(tool) : {};
 
 export default function ImageConverterPage() {
-  const tool = getToolBySlug("image-converter");
   if (!tool) notFound();
-
   return (
     <div className="flex flex-col min-h-screen">
-      <ToolPageHeader tool={tool} badge="Instant Format Switch" />
+      <ToolJsonLd tool={tool} />
+      <ToolPageHeader tool={tool} badge="Batch Convert" />
       <ImageConverter />
+      <RelatedTools currentToolId={tool.id} category={tool.category} />
     </div>
   );
 }
-

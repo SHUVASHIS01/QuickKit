@@ -1,25 +1,23 @@
 import React from "react";
-import { Metadata } from "next";
-import { getToolBySlug } from "@/config/tools";
-import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
-import { PdfToWord } from "@/features/pdf-to-word/PdfToWord";
 import { notFound } from "next/navigation";
+import { getToolBySlug } from "@/config/tools";
+import { generateToolMetadata } from "@/lib/seo";
+import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
+import { ToolJsonLd } from "@/components/seo/ToolJsonLd";
+import { RelatedTools } from "@/components/tool/RelatedTools";
+import { PdfToWord } from "@/features/pdf-to-word/PdfToWord";
 
-export const metadata: Metadata = {
-  title: "PDF to Word Converter — Convert PDF to DOCX & Vice Versa",
-  description:
-    "Convert PDF documents to editable Microsoft Word (.docx) files or convert Word files into clean PDFs directly in your browser.",
-};
+const tool = getToolBySlug("pdf-to-word");
+export const metadata = tool ? generateToolMetadata(tool) : {};
 
 export default function PdfToWordPage() {
-  const tool = getToolBySlug("pdf-to-word");
   if (!tool) notFound();
-
   return (
     <div className="flex flex-col min-h-screen">
-      <ToolPageHeader tool={tool} badge="Editable DOCX" />
+      <ToolJsonLd tool={tool} />
+      <ToolPageHeader tool={tool} badge="DOCX Output" />
       <PdfToWord />
+      <RelatedTools currentToolId={tool.id} category={tool.category} />
     </div>
   );
 }
-

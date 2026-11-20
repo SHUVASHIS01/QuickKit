@@ -1,24 +1,23 @@
 import React from "react";
-import { Metadata } from "next";
-import { getToolBySlug } from "@/config/tools";
-import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
-import { PinterestDownloader } from "@/features/pinterest-downloader/PinterestDownloader";
 import { notFound } from "next/navigation";
+import { getToolBySlug } from "@/config/tools";
+import { generateToolMetadata } from "@/lib/seo";
+import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
+import { ToolJsonLd } from "@/components/seo/ToolJsonLd";
+import { RelatedTools } from "@/components/tool/RelatedTools";
+import { PinterestDownloader } from "@/features/pinterest-downloader/PinterestDownloader";
 
-export const metadata: Metadata = {
-  title: "Pinterest Media Downloader — Download Images & Videos",
-  description:
-    "Extract original high-resolution photos and video clips from public Pinterest pin links directly to your device.",
-};
+const tool = getToolBySlug("pinterest-downloader");
+export const metadata = tool ? generateToolMetadata(tool) : {};
 
 export default function PinterestDownloaderPage() {
-  const tool = getToolBySlug("pinterest-downloader");
   if (!tool) notFound();
-
   return (
     <div className="flex flex-col min-h-screen">
-      <ToolPageHeader tool={tool} badge="Direct CDN Extraction" />
+      <ToolJsonLd tool={tool} />
+      <ToolPageHeader tool={tool} badge="HD Download" />
       <PinterestDownloader />
+      <RelatedTools currentToolId={tool.id} category={tool.category} />
     </div>
   );
 }

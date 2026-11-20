@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.12" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.04" />
+    </linearGradient>
+    <filter id="blur1">
+      <feGaussianBlur stdDeviation="80" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Decorative blobs -->
+  <circle cx="150" cy="120" r="200" fill="#3b82f6" opacity="0.25" filter="url(#blur1)" />
+  <circle cx="1050" cy="510" r="250" fill="#1e40af" opacity="0.3" filter="url(#blur1)" />
+  <circle cx="900" cy="80" r="150" fill="#60a5fa" opacity="0.15" filter="url(#blur1)" />
+
+  <!-- Grid dots pattern -->
+  <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.5" fill="#ffffff" opacity="0.08"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)" />
+
+  <!-- Main card -->
+  <rect x="60" y="60" width="1080" height="510" rx="24" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1" />
+
+  <!-- Logo icon (lightning bolt / toolkit) -->
+  <g transform="translate(100, 120)">
+    <rect width="80" height="80" rx="20" fill="#ffffff" opacity="0.15"/>
+    <text x="40" y="55" font-family="Arial, sans-serif" font-size="42" text-anchor="middle" fill="#ffffff">⚡</text>
+  </g>
+
+  <!-- QuickKit brand name -->
+  <text x="210" y="148" font-family="Arial Black, Arial, sans-serif" font-size="62" font-weight="900" fill="#ffffff" letter-spacing="-1">QuickKit</text>
+
+  <!-- Tagline -->
+  <text x="210" y="190" font-family="Arial, sans-serif" font-size="24" fill="#93c5fd" letter-spacing="0.5">Everything you need. Nothing you don't.</text>
+
+  <!-- Divider line -->
+  <line x1="100" y1="225" x2="1100" y2="225" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1"/>
+
+  <!-- Tool categories pills -->
+  <g transform="translate(100, 258)">
+    <!-- Image Tools -->
+    <rect x="0" y="0" width="168" height="38" rx="19" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1"/>
+    <text x="84" y="25" font-family="Arial, sans-serif" font-size="16" fill="#dbeafe" text-anchor="middle">🖼️ Image Tools</text>
+
+    <!-- PDF Suite -->
+    <rect x="184" y="0" width="140" height="38" rx="19" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1"/>
+    <text x="254" y="25" font-family="Arial, sans-serif" font-size="16" fill="#dbeafe" text-anchor="middle">📄 PDF Suite</text>
+
+    <!-- Developer -->
+    <rect x="340" y="0" width="196" height="38" rx="19" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1"/>
+    <text x="438" y="25" font-family="Arial, sans-serif" font-size="16" fill="#dbeafe" text-anchor="middle">💻 Developer Tools</text>
+
+    <!-- Media -->
+    <rect x="552" y="0" width="156" height="38" rx="19" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1"/>
+    <text x="630" y="25" font-family="Arial, sans-serif" font-size="16" fill="#dbeafe" text-anchor="middle">🎬 Media Tools</text>
+
+    <!-- Converters -->
+    <rect x="724" y="0" width="166" height="38" rx="19" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1"/>
+    <text x="807" y="25" font-family="Arial, sans-serif" font-size="16" fill="#dbeafe" text-anchor="middle">🔄 Converters</text>
+  </g>
+
+  <!-- Big number stat -->
+  <g transform="translate(100, 335)">
+    <text x="0" y="85" font-family="Arial Black, Arial, sans-serif" font-size="96" font-weight="900" fill="#ffffff" opacity="0.95">20+</text>
+    <text x="0" y="118" font-family="Arial, sans-serif" font-size="22" fill="#93c5fd">Free Online Tools</text>
+  </g>
+
+  <g transform="translate(360" >
+    <!-- Shield icon area -->
+    <rect x="360" y="335" width="260" height="130" rx="16" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+    <text x="490" y="385" font-family="Arial, sans-serif" font-size="32" text-anchor="middle" fill="#ffffff">🔒</text>
+    <text x="490" y="415" font-family="Arial Black, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#ffffff">Privacy First</text>
+    <text x="490" y="438" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#93c5fd">No uploads. 100% browser.</text>
+  </g>
+
+  <g>
+    <rect x="650" y="335" width="250" height="130" rx="16" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+    <text x="775" y="385" font-family="Arial, sans-serif" font-size="32" text-anchor="middle" fill="#ffffff">⚡</text>
+    <text x="775" y="415" font-family="Arial Black, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#ffffff">Blazing Fast</text>
+    <text x="775" y="438" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#93c5fd">Instant results, zero lag.</text>
+  </g>
+
+  <g>
+    <rect x="930" y="335" width="230" height="130" rx="16" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+    <text x="1045" y="385" font-family="Arial, sans-serif" font-size="32" text-anchor="middle" fill="#ffffff">🆓</text>
+    <text x="1045" y="415" font-family="Arial Black, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#ffffff">Always Free</text>
+    <text x="1045" y="438" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#93c5fd">No signup required.</text>
+  </g>
+
+  <!-- URL bar at bottom -->
+  <rect x="100" y="500" width="1000" height="44" rx="12" fill="#000000" fill-opacity="0.25"/>
+  <circle cx="130" cy="522" r="6" fill="#ef4444" opacity="0.8"/>
+  <circle cx="152" cy="522" r="6" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="174" cy="522" r="6" fill="#22c55e" opacity="0.8"/>
+  <text x="600" y="528" font-family="Arial, sans-serif" font-size="16" fill="#93c5fd" text-anchor="middle" letter-spacing="0.5">quick-kit-chi.vercel.app</text>
+</svg>

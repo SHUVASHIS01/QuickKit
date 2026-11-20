@@ -1,25 +1,23 @@
 import React from "react";
-import { Metadata } from "next";
-import { getToolBySlug } from "@/config/tools";
-import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
-import { PdfTextEditor } from "@/features/pdf-text-editor/PdfTextEditor";
 import { notFound } from "next/navigation";
+import { getToolBySlug } from "@/config/tools";
+import { generateToolMetadata } from "@/lib/seo";
+import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
+import { ToolJsonLd } from "@/components/seo/ToolJsonLd";
+import { RelatedTools } from "@/components/tool/RelatedTools";
+import { PdfTextEditor } from "@/features/pdf-text-editor/PdfTextEditor";
 
-export const metadata: Metadata = {
-  title: "PDF Text & Annotation Editor — Add Text, Stamps & Signs",
-  description:
-    "Click anywhere on a PDF page to overlay text, add stamps, insert dates, or sign documents right inside your browser.",
-};
+const tool = getToolBySlug("pdf-text-editor");
+export const metadata = tool ? generateToolMetadata(tool) : {};
 
 export default function PdfTextEditorPage() {
-  const tool = getToolBySlug("pdf-text-editor");
   if (!tool) notFound();
-
   return (
     <div className="flex flex-col min-h-screen">
-      <ToolPageHeader tool={tool} badge="Point & Click Edit" />
+      <ToolJsonLd tool={tool} />
+      <ToolPageHeader tool={tool} badge="Sign & Annotate" />
       <PdfTextEditor />
+      <RelatedTools currentToolId={tool.id} category={tool.category} />
     </div>
   );
 }
-

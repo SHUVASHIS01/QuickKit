@@ -1,25 +1,23 @@
 import React from "react";
-import { Metadata } from "next";
-import { getToolBySlug } from "@/config/tools";
-import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
-import { ImageUpscaler } from "@/features/image-upscaler/ImageUpscaler";
 import { notFound } from "next/navigation";
+import { getToolBySlug } from "@/config/tools";
+import { generateToolMetadata } from "@/lib/seo";
+import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
+import { ToolJsonLd } from "@/components/seo/ToolJsonLd";
+import { RelatedTools } from "@/components/tool/RelatedTools";
+import { ImageUpscaler } from "@/features/image-upscaler/ImageUpscaler";
 
-export const metadata: Metadata = {
-  title: "Image Upscaler — 2x & 4x Resolution Enhancer",
-  description:
-    "Upscale images 200% and 400% with adaptive bicubic scaling and edge contrast sharpening directly in your browser.",
-};
+const tool = getToolBySlug("image-upscaler");
+export const metadata = tool ? generateToolMetadata(tool) : {};
 
 export default function ImageUpscalerPage() {
-  const tool = getToolBySlug("image-upscaler");
   if (!tool) notFound();
-
   return (
     <div className="flex flex-col min-h-screen">
-      <ToolPageHeader tool={tool} badge="2X & 4X Upscale" />
+      <ToolJsonLd tool={tool} />
+      <ToolPageHeader tool={tool} badge="2x & 4x" />
       <ImageUpscaler />
+      <RelatedTools currentToolId={tool.id} category={tool.category} />
     </div>
   );
 }
-

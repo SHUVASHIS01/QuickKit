@@ -1,25 +1,23 @@
 import React from "react";
-import { Metadata } from "next";
-import { getToolBySlug } from "@/config/tools";
-import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
-import { PdfCompressor } from "@/features/pdf-compressor/PdfCompressor";
 import { notFound } from "next/navigation";
+import { getToolBySlug } from "@/config/tools";
+import { generateToolMetadata } from "@/lib/seo";
+import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
+import { ToolJsonLd } from "@/components/seo/ToolJsonLd";
+import { RelatedTools } from "@/components/tool/RelatedTools";
+import { PdfCompressor } from "@/features/pdf-compressor/PdfCompressor";
 
-export const metadata: Metadata = {
-  title: "PDF Compressor — Reduce Document Size Online Privately",
-  description:
-    "Compress bloated PDF documents and strip heavy metadata in your browser without uploading files to remote servers.",
-};
+const tool = getToolBySlug("pdf-compressor");
+export const metadata = tool ? generateToolMetadata(tool) : {};
 
 export default function PdfCompressorPage() {
-  const tool = getToolBySlug("pdf-compressor");
   if (!tool) notFound();
-
   return (
     <div className="flex flex-col min-h-screen">
-      <ToolPageHeader tool={tool} badge="Fast Local Shrink" />
+      <ToolJsonLd tool={tool} />
+      <ToolPageHeader tool={tool} badge="Reduce Size" />
       <PdfCompressor />
+      <RelatedTools currentToolId={tool.id} category={tool.category} />
     </div>
   );
 }
-

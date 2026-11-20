@@ -65,11 +65,20 @@ export const metadata: Metadata = {
     title: `${SITE_CONFIG.name} — ${SITE_CONFIG.tagline}`,
     description: SITE_CONFIG.description,
     siteName: SITE_CONFIG.name,
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "QuickKit — Free Online Tools",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE_CONFIG.name} — ${SITE_CONFIG.tagline}`,
     description: SITE_CONFIG.description,
+    images: ["/og-image.svg"],
   },
   robots: {
     index: true,
@@ -138,9 +147,10 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
 
-        {/* Structured Data Schema */}
+        {/* Structured Data Schema — suppressHydrationWarning prevents SSR/client mismatch */}
         <script
           type="application/ld+json"
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 

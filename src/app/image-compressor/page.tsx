@@ -1,25 +1,23 @@
 import React from "react";
-import { Metadata } from "next";
-import { getToolBySlug } from "@/config/tools";
-import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
-import { ImageCompressor } from "@/features/image-compressor/ImageCompressor";
 import { notFound } from "next/navigation";
+import { getToolBySlug } from "@/config/tools";
+import { generateToolMetadata } from "@/lib/seo";
+import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
+import { ToolJsonLd } from "@/components/seo/ToolJsonLd";
+import { RelatedTools } from "@/components/tool/RelatedTools";
+import { ImageCompressor } from "@/features/image-compressor/ImageCompressor";
 
-export const metadata: Metadata = {
-  title: "Image Compressor — Reduce File Size Privately",
-  description:
-    "Compress JPG, PNG, and WebP images by up to 80% without quality degradation. Local canvas processing ensures zero server upload.",
-};
+const tool = getToolBySlug("image-compressor");
+export const metadata = tool ? generateToolMetadata(tool) : {};
 
 export default function ImageCompressorPage() {
-  const tool = getToolBySlug("image-compressor");
   if (!tool) notFound();
-
   return (
     <div className="flex flex-col min-h-screen">
-      <ToolPageHeader tool={tool} badge="Lossless Compression" />
+      <ToolJsonLd tool={tool} />
+      <ToolPageHeader tool={tool} badge="Up to 80% Smaller" />
       <ImageCompressor />
+      <RelatedTools currentToolId={tool.id} category={tool.category} />
     </div>
   );
 }
-

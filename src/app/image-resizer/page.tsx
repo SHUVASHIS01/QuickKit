@@ -1,25 +1,23 @@
 import React from "react";
-import { Metadata } from "next";
-import { getToolBySlug } from "@/config/tools";
-import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
-import { ImageResizer } from "@/features/image-resizer/ImageResizer";
 import { notFound } from "next/navigation";
+import { getToolBySlug } from "@/config/tools";
+import { generateToolMetadata } from "@/lib/seo";
+import { ToolPageHeader } from "@/components/tool/ToolPageHeader";
+import { ToolJsonLd } from "@/components/seo/ToolJsonLd";
+import { RelatedTools } from "@/components/tool/RelatedTools";
+import { ImageResizer } from "@/features/image-resizer/ImageResizer";
 
-export const metadata: Metadata = {
-  title: "Image Resizer — Scale and Resize Dimensions",
-  description:
-    "Resize images to exact pixel widths and heights with aspect ratio preservation and social media presets.",
-};
+const tool = getToolBySlug("image-resizer");
+export const metadata = tool ? generateToolMetadata(tool) : {};
 
 export default function ImageResizerPage() {
-  const tool = getToolBySlug("image-resizer");
   if (!tool) notFound();
-
   return (
     <div className="flex flex-col min-h-screen">
-      <ToolPageHeader tool={tool} badge="Custom Scale" />
+      <ToolJsonLd tool={tool} />
+      <ToolPageHeader tool={tool} badge="Custom Dimensions" />
       <ImageResizer />
+      <RelatedTools currentToolId={tool.id} category={tool.category} />
     </div>
   );
 }
-
